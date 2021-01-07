@@ -6,7 +6,6 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import dagger.hilt.android.AndroidEntryPoint
-import shah.rahul.mvihilt.R
 import shah.rahul.mvihilt.databinding.ActivityMainBinding
 import shah.rahul.mvihilt.model.Blog
 import shah.rahul.mvihilt.util.DataState
@@ -66,7 +65,9 @@ class MainActivity : AppCompatActivity() {
     private fun appendBlogTitles(blogs: List<Blog>){
         val sb = StringBuilder()
         for (blog in blogs) {
-            sb.append(blog.title + "\n\n")
+            sb.append(blog.title + "\n")
+            sb.append(blog.body+ "\n")
+            sb.append(blog.category+ "\n")
         }
         binding.text.text = sb.toString()
     }
